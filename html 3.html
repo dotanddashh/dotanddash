@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dot & Dash Jewellery</title>
+  
+<link href="../Documents/ewwwwwwwwwwwwww.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <h1 class="brand-title">Dot & Dash</h1>
+  </header>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <nav>
+      <h3>Shop Now</h3>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Rings ▾</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="filterCategory('rings-male')">Male</a>
+          <a href="#" onclick="filterCategory('rings-female')">Female</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Bracelets ▾</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="filterCategory('bracelets-male')">Male</a>
+          <a href="#" onclick="filterCategory('bracelets-female')">Female</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Caps ▾</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="filterCategory('caps-male')">Male</a>
+          <a href="#" onclick="filterCategory('caps-female')">Female</a>
+        </div>
+      </div>
+
+      <a href="#" onclick="filterCategory('earrings')">Earrings</a>
+      <a href="#" onclick="filterCategory('bangles')">Bangles</a>
+
+      <div class="sidebar-gap"></div>
+
+      <a href="#about">About Us</a>
+      <a href="#shipping-section">Shipping & Returns</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero Logo -->
+    <section class="hero-logo">
+      <img src="../Documents/dot and dash.jpeg" alt="Dot & Dash Logo" class="site-logo">
+    </section>
+
+    <!-- Hero Text -->
+    <section class="hero">
+      <h2>Everyday Luxury for Everyone</h2>
+      <p>Explore our collections inspired by minimal, everyday elegance.</p>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="about-section">
+      <h2>About Us</h2>
+      <p>At Dot & Dash, we believe jewellery should make you feel special. That’s why we carefully curate pieces that combine timeless beauty, modern style, and lasting quality. Whether you're celebrating a big moment or just treating yourself, we're here to help you find jewellery that feels personal and unforgettable.</p>
+    </section>
+
+    <!-- Top Bar: Best Selling centered, Categories on either side -->
+
+
+  <div class="best-sell-btn">
+    <button onclick="filterCategory('best-selling')">Best Selling</button>
+  </div>
+
+  <div class="right-spacer"></div>
+</div>
+
+
+    <!-- Products Grid -->
+    <section id="product-list" class="categories">
+      <!-- JS injects product cards here -->
+    </section>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button onclick="changePage(-1)">« Prev</button>
+      <span id="page-number">Page 1</span>
+      <button onclick="changePage(1)">Next »</button>
+    </div>
+
+    <!-- Proceed to Checkout -->
+    <div class="checkout-btn">
+      <button onclick="goToCheckout()">Proceed to Checkout</button>
+    </div>
+
+    <!-- Shipping & Returns (Bottom) -->
+    <section id="shipping-section" class="shipping-section">
+      <h2>Shipping & Returns</h2>
+      <p>We offer a 7-day free return policy for your peace of mind. Return within 7 days—no questions asked.</p>
+    </section>
+
+    <!-- Contact Us (Bottom) -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Us</h2>
+      <p>Email: [your email here]</p>
+      <p>Phone: [your phone here]</p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#about">About Us</a>
+      <a href="#shipping-section">Shipping & Returns</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../Documents/javascriptty.js" defer></script>
+</body>
+</html>

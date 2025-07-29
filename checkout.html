@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dot & Dash – Checkout</title>
+  <link rel="stylesheet" href="../Documents/style.css" />
+  <link href="../Documents/ewwwwwwwwwwwwww.css" rel="stylesheet" type="text/css">
+  <!-- Remove any <a> tags from here—they belong in the body -->
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <h1 class="brand-title">Dot & Dash</h1>
+  </header>
+
+  <!-- Sidebar (will slide in/out) -->
+  <aside id="sidebar" class="sidebar">
+    <nav>
+      <h3>Menu</h3>
+      <a href="../Documents/html 3.html">Home</a>
+      <a href="../Documents/html 3.html"#about">About Us</a>
+      <a href="../Documents/html 3.html"#contact">Contact Us</a>
+      <a href="../Documents/html 3.html"#shipping-section">Shipping & Returns</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Cart Summary -->
+    <section id="checkout-cart">
+      <h2>Your Cart</h2>
+      <div id="cart-summary">
+        <!-- JavaScript will populate this -->
+      </div>
+    </section>
+
+    <!-- Billing & Delivery Form -->
+    <section id="order-form" class="order-form">
+      <h2>Billing & Delivery Details</h2>
+      <form onsubmit="submitOrder(event)">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <textarea id="address" placeholder="Complete Address" required></textarea>
+        <select id="city" required>
+          <option value="">Select City (Pakistan only)</option>
+          <option>Lahore</option>
+          <option>Karachi</option>
+          <option>Islamabad</option>
+          <option>Multan</option>
+          <option>Faisalabad</option>
+        </select>
+        <fieldset>
+          <legend>Payment Method</legend>
+          <label><input type="radio" name="payment" value="COD" required> Cash on Delivery</label><br>
+          <label><input type="radio" name="payment" value="Online Transfer" required> Online Transfer</label>
+        </fieldset>
+        <p>Shipping Charges: <strong>Rs. 250</strong></p>
+        <p id="order-total"><strong>Total: Rs. 0</strong></p>
+        <button type="submit" class="proceed-btn">Place Order</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Back to Home at the Bottom -->
+  <div class="back-home">
+    <a href="../Documents/html 3.html">← Back to Home</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="../Documents/html 3.html">Home</a>
+      <a href="../Documents/html 3.html#shipping-section">Shipping & Returns</a>
+      <a href="../Documents/html 3.html#contact">Contact Us</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript (handles sidebar toggle, cart loading, form submission) -->
+  <script src="../Documents/javascriptty.js" defer></script>
+</body>
+</html>
