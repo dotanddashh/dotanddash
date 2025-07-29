@@ -4,121 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dot & Dash Jewellery</title>
-  
-<link href="../Documents/ewwwwwwwwwwwwww.css" rel="stylesheet" type="text/css">
+  <link href="../../Documents/ewwwwwwwwwwwwww.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
-    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-    <h1 class="brand-title">Dot & Dash</h1>
+    <button id="menu-btn" class="menu-btn">☰</button>
+    <h1 class="brand-title">Dot &amp; Dash</h1>
+    <div id="cart-icon" class="cart-icon">🛒 <span id="cart-count">0</span></div>
   </header>
 
-  <!-- Sidebar -->
-  <aside id="sidebar" class="sidebar">
-    <nav>
-      <h3>Shop Now</h3>
+  <!-- SIDEBAR -->
+<aside id="sidebar" class="sidebar">
+  <h3>Shop Now</h3>
 
-      <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown(this)">Rings ▾</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="filterCategory('rings-male')">Male</a>
-          <a href="#" onclick="filterCategory('rings-female')">Female</a>
-        </div>
-      </div>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown(this)">Categories ▾</button>
+    <div class="dropdown-content">
+      <ul class="category-list">
+        <li onclick="toggleSubmenu('rings-submenu')">Rings ▾</li>
+        <ul id="rings-submenu" class="submenu" style="display: none;">
+          <li onclick="filterCategory('rings-male')">Male</li>
+          <li onclick="filterCategory('rings-female')">Female</li>
+        </ul>
 
-      <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown(this)">Bracelets ▾</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="filterCategory('bracelets-male')">Male</a>
-          <a href="#" onclick="filterCategory('bracelets-female')">Female</a>
-        </div>
-      </div>
+        <li onclick="toggleSubmenu('bracelets-submenu')">Bracelets ▾</li>
+        <ul id="bracelets-submenu" class="submenu" style="display: none;">
+          <li onclick="filterCategory('bracelets-male')">Male</li>
+          <li onclick="filterCategory('bracelets-female')">Female</li>
+        </ul>
 
-      <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown(this)">Caps ▾</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="filterCategory('caps-male')">Male</a>
-          <a href="#" onclick="filterCategory('caps-female')">Female</a>
-        </div>
-      </div>
+        <li><button onclick="filterCategory('earrings')">Earrings</button></li>
+        <li><button onclick="filterCategory('necklaces')">Necklaces</button></li>
+        <li><button onclick="filterCategory('caps')">Caps</button></li>
+      </ul>
+    </div>
+	</div>
 
-      <a href="#" onclick="filterCategory('earrings')">Earrings</a>
-      <a href="#" onclick="filterCategory('bangles')">Bangles</a>
-
-      <div class="sidebar-gap"></div>
-
-      <a href="#about">About Us</a>
-      <a href="#shipping-section">Shipping & Returns</a>
-      <a href="#contact">Contact Us</a>
-    </nav>
+    <div class="sidebar-gap"></div>
+    <a href="#about">About Us</a>
+    <a href="#shipping-section">Shipping & Returns</a>
+    <a href="#contact">Contact Us</a>
   </aside>
 
-  <!-- Main Content -->
-  <main>
-
-    <!-- Hero Logo -->
-    <section class="hero-logo">
-      <img src="../Documents/dot and dash.jpeg" alt="Dot & Dash Logo" class="site-logo">
-    </section>
-
-    <!-- Hero Text -->
-    <section class="hero">
-      <h2>Everyday Luxury for Everyone</h2>
-      <p>Explore our collections inspired by minimal, everyday elegance.</p>
-    </section>
-
-    <!-- About Us -->
-    <section id="about" class="about-section">
-      <h2>About Us</h2>
-      <p>At Dot & Dash, we believe jewellery should make you feel special. That’s why we carefully curate pieces that combine timeless beauty, modern style, and lasting quality. Whether you're celebrating a big moment or just treating yourself, we're here to help you find jewellery that feels personal and unforgettable.</p>
-    </section>
-
-    <!-- Top Bar: Best Selling centered, Categories on either side -->
-
-
-  <div class="best-sell-btn">
-    <button onclick="filterCategory('best-selling')">Best Selling</button>
+  <!-- CART POPUP -->
+  <div id="cart-popup" class="cart-popup hidden">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <button onclick="goToCheckout()">Proceed to Checkout</button>
   </div>
 
-  <div class="right-spacer"></div>
-</div>
+  <!-- HERO LOGO -->
+  <section class="hero-logo">
+    <img src="../../Documents/dot and dash.jpeg" alt="Dot & Dash Logo" class="site-logo">
+  </section>
 
+  <!-- HERO TEXT -->
+  <section class="hero">
+    <h2>Everyday Luxury for Everyone</h2>
+    <p>Explore our collections inspired by minimal, everyday elegance.</p>
+  </section>
 
-    <!-- Products Grid -->
-    <section id="product-list" class="categories">
-      <!-- JS injects product cards here -->
-    </section>
+  <!-- IMAGE CAROUSEL -->
+  <section class="image-carousel">
+    <img src="../../Pictures/Saved Pictures/il_570xN.4798259924_7y71.avif" alt="Jewelry 1">
+    <img src="../../Pictures/Saved Pictures/5cae60a2b3d3d9c00ad23539d32fb60f.jpg" alt="Jewelry 2">
+    <img src="../../Pictures/Saved Pictures/Mejuri-Locket-Necklace-Minimalist-Gold-Jewelry-800x1200.jpg" alt="Jewelry 3">
+    <img src="../../Pictures/Saved Pictures/dc257cc1096f9736088c8397af487483.jpg" alt="Jewelry 4">
+  </section>
 
-    <!-- Pagination -->
-    <div class="pagination">
-      <button onclick="changePage(-1)">« Prev</button>
-      <span id="page-number">Page 1</span>
-      <button onclick="changePage(1)">Next »</button>
-    </div>
+  <!-- ABOUT US -->
+  <section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>At Dot & Dash, we believe jewellery should make you feel special. That’s why we carefully curate pieces that combine timeless beauty, modern style, and lasting quality. Whether you're celebrating a big moment or just treating yourself, we're here to help you find jewellery that feels personal and unforgettable.</p>
+  </section>
 
-    <!-- Proceed to Checkout -->
-    <div class="checkout-btn">
-      <button onclick="goToCheckout()">Proceed to Checkout</button>
-    </div>
+  <!-- BEST SELLING -->
+  <div class="best-sell-btn">
+    <button id="best-sell">Best Selling</button>
+  </div>
 
-    <!-- Shipping & Returns (Bottom) -->
-    <section id="shipping-section" class="shipping-section">
-      <h2>Shipping & Returns</h2>
-      <p>We offer a 7-day free return policy for your peace of mind. Return within 7 days—no questions asked.</p>
-    </section>
+  <!-- PRODUCT GRID -->
+  <section id="product-list" class="categories"></section>
 
-    <!-- Contact Us (Bottom) -->
-    <section id="contact" class="contact-section">
-      <h2>Contact Us</h2>
-      <p>Email: [your email here]</p>
-      <p>Phone: [your phone here]</p>
-    </section>
+  <!-- PAGINATION -->
+  <div class="pagination">
+    <button onclick="changePage(-1)">« Prev</button>
+    <span id="page-number">Page 1</span>
+    <button onclick="changePage(1)">Next »</button>
+  </div>
 
-  </main>
+  <!-- PROCEED TO CHECKOUT -->
+  <div class="checkout-btn">
+    <button onclick="goToCheckout()">Proceed to Checkout</button>
+  </div>
 
-  <!-- Footer -->
+  <!-- SHIPPING SECTION -->
+  <section id="shipping-section" class="shipping-section">
+    <h2>Shipping & Returns</h2>
+    <p>We offer a 7-day free return policy for your peace of mind. Return within 7 days—no questions asked.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Email: DotandDash.pk@gmail.com</p>
+    <p>Phone: 03701409180</p>
+  </section>
+
   <footer>
     <div class="footer-links">
       <a href="#about">About Us</a>
@@ -127,7 +121,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="../Documents/javascriptty.js" defer></script>
+  <script src="../../Documents/javascriptty.js" defer></script>
 </body>
 </html>
